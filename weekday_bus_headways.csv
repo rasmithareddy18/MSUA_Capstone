@@ -1,0 +1,114 @@
+route_id,route_short_name,route_long_name,Early Morning (00:00-06:00),AM Peak (06:00-09:00),Midday (09:00-15:00),PM Peak (15:00-19:00),Night (19:00-24:00),is_frequent_network
+27323,1,Marietta Blvd/Joseph E Lowery Blvd,40.0,40.0,40.0,40.0,40.0,False
+27324,2,Ponce de Leon Avenue / Druid Hills,30.0,30.0,30.0,30.0,30.0,False
+27325,3,Martin Luther King Jr Dr/Auburn Ave,45.0,45.0,45.0,45.0,45.0,False
+27326,4,Moreland Avenue,40.0,40.0,40.0,40.5,40.0,False
+27327,5,Piedmont Road / Sandy Springs,20.0,15.0,20.0,15.0,20.0,True
+27328,6,Clifton Road / Emory,25.0,20.0,45.0,35.0,45.0,False
+27329,8,North Druid Hills Road,,45.0,60.0,45.0,60.0,False
+27330,9,Boulevard / Tilson Road,40.0,40.0,40.0,40.0,40.0,False
+27331,12,Howell Mill Road / Cumberland,30.0,20.0,30.0,20.0,30.0,False
+27332,14,14th Street / Blandtown,40.0,40.0,40.0,40.0,40.0,False
+27333,15,Candler Road,20.0,15.0,20.0,15.0,20.0,True
+27334,19,Clairmont Road / Howard Avenue,48.0,30.0,40.0,30.0,45.0,False
+27335,21,Memorial Drive,30.0,30.0,30.0,30.0,30.0,False
+27336,24,McAfee / Hosea Williams,60.0,60.0,60.0,60.0,60.0,False
+27337,25,Peachtree Boulevard,,45.0,45.0,45.0,45.0,False
+27338,26,Marietta Street / Perry Boulevard,44.5,45.0,45.0,45.0,45.0,False
+27339,27,Cheshire Bridge Road,,45.0,45.0,45.0,45.0,False
+27340,30,LaVista Road,40.0,40.0,60.0,40.0,60.0,False
+27341,32,Bouldercrest,30.0,30.0,40.0,30.0,40.0,False
+27342,34,Gresham Road,39.5,40.0,40.0,40.0,40.0,False
+27343,36,N Decatur Road / Virginia Highland,,40.0,40.0,40.0,40.0,False
+27344,37,Defoors Ferry Road,34.0,40.0,40.0,40.0,40.0,False
+27345,39,Buford Highway,20.0,15.0,20.0,15.0,20.0,True
+27346,40,Peachtree Street / Downtown,45.0,45.0,45.0,45.0,45.0,False
+27347,42,Pryor Road,40.0,30.0,40.0,30.0,40.0,False
+27348,47,I-85 Access Road,,45.0,45.0,45.0,45.0,False
+27349,49,McDonough Boulevard,20.0,20.0,30.0,20.0,30.0,False
+27350,50,Donald Lee Hollowell Parkway,30.0,30.0,30.0,30.0,30.0,False
+27351,51,Joseph E Boone Boulevard,30.0,20.0,30.0,20.0,30.0,False
+27352,55,Jonesboro Road,20.0,20.0,30.0,20.0,30.0,False
+27353,58,Hollywood Road / Lucile Avenue,43.5,45.0,45.0,45.0,45.0,False
+27354,60,Hightower Road,30.0,30.0,30.0,30.0,30.0,False
+27355,66,Lynhurst Drive / Princeton Lakes,40.0,40.0,40.0,40.0,40.0,False
+27356,68,Benjamin E Mays Drive,40.0,40.0,40.0,40.0,40.0,False
+27357,71,Cascade Road,20.0,20.0,20.0,20.0,20.0,False
+27358,73,Fulton Industrial,15.0,10.0,15.0,10.0,18.0,True
+27359,74,Flat Shoals Road,30.0,30.0,40.0,30.0,40.0,False
+27360,75,Lawrenceville Highway,,45.0,45.0,45.0,45.0,False
+27361,78,Cleveland Avenue,20.0,15.0,20.0,15.0,20.0,True
+27362,79,Sylvan Hills,40.0,40.0,40.0,40.0,40.0,False
+27363,81,Venetian Hills / Delowe Drive,45.0,45.0,45.0,45.0,45.0,False
+27364,82,Camp Creek / South Fulton Parkway,30.0,30.0,30.0,30.0,30.0,False
+27365,83,Campbellton Road,15.0,10.0,15.0,10.0,20.0,True
+27366,84,Washington Rd/Camp Crk Marketplace,20.0,20.0,30.0,20.0,40.0,False
+27367,85,Roswell,40.0,40.0,40.0,40.0,40.0,False
+27368,86,Fairington Road,20.0,31.0,40.0,20.0,40.0,False
+27369,87,Roswell Road / Sandy Springs,20.0,20.0,40.0,20.0,40.0,False
+27370,89,Old National Highway,15.0,15.0,20.0,15.0,20.0,True
+27371,93,Headland Drive / Main Street,45.0,45.0,45.0,45.0,45.0,False
+27372,94,Northside Drive,40.0,40.0,40.0,40.0,40.0,False
+27373,95,Metropolitan Parkway,15.0,15.0,20.0,15.0,20.0,True
+27374,102,North Avenue / Little Five Points,30.0,30.0,30.0,30.0,30.0,False
+27375,103,Peeler Road,,57.0,58.0,61.5,61.0,False
+27376,104,Winters Chapel Road,,45.0,45.0,45.0,45.0,False
+27377,107,Glenwood,30.0,30.0,30.0,30.0,30.0,False
+27378,110,Peachtree Road / Buckhead,20.0,15.0,20.0,15.0,20.0,True
+27379,111,Snapfinger Woods,14.0,39.0,40.0,20.0,40.0,False
+27380,114,Columbia Drive,40.0,40.0,40.0,40.0,40.0,False
+27381,115,Covington Highway,23.5,28.0,30.0,15.0,30.0,False
+27382,116,Redan Road,15.0,15.0,30.0,15.0,30.0,True
+27383,117,Rockbridge Road / Panola Road,15.0,15.0,30.0,15.5,30.0,False
+27384,119,Hairston Road / Stone Mtn Village,30.0,30.0,30.0,30.0,45.0,False
+27385,120,East Ponce De Leon Avenue,20.0,20.0,30.0,20.0,30.0,False
+27386,121,Memorial Drive / N Hairston Road,20.0,15.0,20.0,15.0,20.0,True
+27387,123,Church Street,,60.0,60.0,60.0,60.0,False
+27388,124,Pleasantdale Road,28.0,30.0,30.0,30.0,45.0,False
+27389,125,Clarkston,31.5,30.0,30.0,30.0,45.0,False
+27390,126,Embry Hills,34.0,40.0,40.0,40.0,60.0,False
+27391,132,Tilly Mill Road,,60.0,60.0,60.0,60.0,False
+27392,133,Shallowford Road,40.0,40.0,60.0,40.0,60.0,False
+27393,140,North Point Parkway,,40.0,40.0,40.0,40.0,False
+27394,141,Haynes Bridge Road / Milton,,40.0,40.0,40.0,40.0,False
+27395,142,East Holcomb Bridge Road,,40.0,60.0,40.0,37.0,False
+27396,143,Windward Park & Ride,,45.0,45.0,45.0,45.0,False
+27397,148,Mount Vernon Highway,,60.0,60.0,70.0,,False
+27398,150,Dunwoody Village,,40.0,60.0,40.0,60.0,False
+27399,153,James Jackson Parkway,30.0,30.0,30.0,30.0,30.0,False
+27400,155,Pittsburgh,45.0,45.0,45.0,45.0,45.0,False
+27401,162,Myrtle Drive / Alison Court,40.0,20.0,40.0,20.0,40.0,False
+27402,165,Fairburn Road,30.0,20.0,30.0,20.0,30.0,False
+27403,172,Sylvan Road / Virginia Avenue,45.0,45.0,45.0,45.0,45.0,False
+27404,178,Empire Blvd / Southside Ind Park,30.0,30.0,30.0,30.0,30.0,False
+27405,180,Roosevelt Highway,30.0,30.0,30.0,30.0,30.0,False
+27406,181,Washington Road / Fairburn,20.0,20.0,30.0,20.0,40.0,False
+27407,183,Greenbriar,40.0,40.0,40.0,40.0,40.0,False
+27408,185,Alpharetta,28.0,40.0,40.0,40.0,40.0,False
+27409,186,Rainbow Drive / South DeKalb,11.0,24.5,30.0,15.0,30.0,False
+27410,188,Oakley Industrial,,45.0,,45.0,,False
+27411,189,Flat Shoals Road / Scofield Road,29.5,30.0,30.0,30.0,30.0,False
+27412,191,Riverdale / ATL Intl Terminal,45.0,45.0,45.0,45.0,45.0,False
+27413,192,Old Dixie / Tara Boulevard,56.0,45.0,60.0,45.0,60.0,False
+27414,193,Morrow / Jonesboro,30.0,30.0,30.0,30.0,30.0,False
+27415,194,Conley Road / Mt Zion,39.0,40.0,40.0,40.0,40.0,False
+27416,195,Forest Parkway,60.0,60.0,60.0,60.5,60.0,False
+27417,196,Upper Riverdale,25.0,27.0,30.0,15.0,30.0,False
+27418,197,Battle Creek Road,60.0,60.0,60.0,60.0,60.0,False
+27419,198,Southlake Parkway,,60.0,60.0,60.0,60.0,False
+27420,201,Six Flags Over Georgia,40.0,,40.0,40.0,40.0,False
+27421,221,Memorial Drive Limited,,30.0,30.0,30.0,,False
+27422,295,Metropolitan Campus Express,,30.0,30.0,30.0,,False
+27432,800,Lovejoy,60.0,60.0,60.0,60.0,60.0,False
+27433,809,Monroe Drive / Boulevard,35.0,38.083333333333336,40.0,38.5,40.5,False
+27434,813,Atlanta University Center,40.0,40.0,40.0,40.0,40.0,False
+27435,816,North Highland Avenue,,45.0,45.0,45.0,45.0,False
+27436,823,Belvedere,,60.0,60.0,60.0,60.0,False
+27437,825,Johnson Ferry Road,,60.0,60.0,60.0,60.0,False
+27438,832,Grant Park,57.5,60.0,60.0,60.0,60.0,False
+27439,850,Carroll Heights / Fairburn Heights,,60.0,60.0,60.0,60.0,False
+27440,853,Center Hill,40.0,40.0,40.0,40.0,40.0,False
+27441,856,Baker Hills / Wilson Mill Meadows,60.0,60.0,60.0,60.0,60.0,False
+27442,865,Boulder Park Drive,61.0,60.0,60.0,60.0,60.0,False
+27443,867,Peyton Forest / Dixie Hills,,60.0,60.0,60.0,60.0,False
+27444,899,Old Fourth Ward,,60.0,60.0,60.0,60.0,False
