@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MARTA Route 39: Stop Redundancy, Unreliability & Rider Abandonment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fafaf7;--card:#fff;--tx:#1d2330;--mu:#5d6676;--ac:#c8372d;--ok:#1f8a5b;--bd:#e3e1da;--hero:#12263f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1218;--card:#181c25;--tx:#e8eaf0;--mu:#9aa3b5;--ac:#ff6b5e;--ok:#4cc38a;--bd:#2a303c;--hero:#0a1424;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Georgia,'Times New Roman',serif}
+h1,h2,h3,.k,nav,.lab{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+header{background:var(--hero);color:#fff;padding:64px 20px 56px}
+.w{max-width:960px;margin:0 auto;padding:0 20px}header .w{padding:0}
+header p.e{letter-spacing:.14em;text-transform:uppercase;font:600 12px system-ui;color:#ff9b91;margin:0 0 12px}
+h1{font-size:clamp(28px,5vw,46px);line-height:1.12;margin:0 0 16px;max-width:780px}header p{max-width:700px;color:#cdd6e4;font-size:18px;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--bd);z-index:5;overflow-x:auto;white-space:nowrap}
+nav a{display:inline-block;padding:12px 14px;color:var(--mu);text-decoration:none;font-size:14px}nav a:hover{color:var(--ac)}
+section{padding:48px 0 8px}h2{font-size:28px;margin:0 0 8px}.lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);font-weight:700}
+p.lead{color:var(--mu);max-width:720px}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:22px 0}
+.kc{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px}.k{font-size:34px;font-weight:700;color:var(--ac);line-height:1.1}.kc small{display:block;color:var(--mu);font:13px/1.4 system-ui;margin-top:6px}
+.ch{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px;margin:16px 0}.ch .p{width:100%;height:420px}
+.cap{font:13px/1.5 system-ui;color:var(--mu);margin:2px 8px 6px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.cmp{grid-template-columns:1fr}}
+.bar{height:26px;border-radius:6px;background:var(--bd);overflow:hidden;margin:8px 0 4px;display:flex}.bar i{display:block;height:100%}
+.step{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}.step div{border-left:3px solid var(--ac);padding:4px 12px;font:14px/1.45 system-ui;color:var(--mu)}.step b{color:var(--tx);display:block}
+table{border-collapse:collapse;width:100%;font:14px system-ui}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left}
+.box{border:1px dashed var(--bd);border-radius:10px;padding:14px 18px;font:14px/1.55 system-ui;color:var(--mu);margin:16px 0}
+footer{padding:40px 20px;color:var(--mu);font:13px system-ui;text-align:center}
+.leg{display:flex;gap:18px;flex-wrap:wrap;font:13px system-ui;color:#cdd6e4;margin-top:8px}.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}.leg b{color:#fff}.leg .mu{opacity:.7}
+header{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-start;padding:90px 20px 40px;overflow:hidden;background:linear-gradient(#0a1424,#14284a)}
+#anim{position:absolute;inset:0;width:100%;height:100%;display:block}.hv{position:absolute;inset:0;background:linear-gradient(rgba(8,16,30,.72) 0%,rgba(8,16,30,.35) 45%,rgba(8,16,30,0) 70%);pointer-events:none}
+.hc{position:relative;z-index:2}.hc h1,.hc p{text-shadow:0 2px 12px rgba(0,0,0,.5)}.leg{margin-top:14px}.sd{position:absolute;top:calc(100% - 38px);left:0;right:0;text-align:center;font:13px system-ui;color:#cdd6e4;z-index:2;opacity:.8}
+header .hc{padding:0 20px}
+.sim canvas{width:100%;display:block}.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:10px 8px;font:14px system-ui;align-items:center}.ctl button{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 14px;border-radius:8px;cursor:pointer;font:inherit}.ctl button.on{background:var(--ac);color:#fff;border-color:var(--ac)}.ctl .r{margin-left:auto;color:var(--mu)}
+ul.t{padding-left:20px;max-width:760px}ul.t li{margin:6px 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.two{grid-template-columns:1fr}}
+</style></head><body>
+<header><canvas id="anim" aria-label="Background animation: riders queue at a bus stop; some board the bus, others give up waiting"></canvas><div class="hv"></div>
+<div class="w hc"><p class="e">Urban Analytics Capstone Report · Georgia Tech</p>
+<h1>Route 39 Transit Reliability</h1>
+<p>An Agent-Based Modeling (ABM) approach to analyzing wait-time friction and stop spacing optimization for equitable urban mobility.</p>
+<p style="margin-top:14px;font:600 16px system-ui">Rasmitha Reddy Mundla</p><div class="leg"><span><i style="background:#4cc38a"></i>Boarded <b id="nb">0</b></span><span><i style="background:#ff6b5e"></i>Gave up waiting <b id="na">0</b></span><span class="mu">Illustrative: riders leave when the wait exceeds their tolerance</span></div></div>
+<div class="sd">scroll down to continue ↓</div></header>
+<nav><div class="w"><a href="#overview">Overview</a><a href="#wait">Wait times</a><a href="#space">Stop spacing</a><a href="#equity">Equity</a><a href="#abm">Simulation</a><a href="#replay">Replay</a><a href="#fix">Intervention</a><a href="#method">Method</a><a href="#concl">Conclusions</a><a href="#next">Next steps</a></div></nav>
+<div class="w">
+<section><div class="kp">
+<div class="kc"><div class="k">10.7 min</div><small>Peak wait penalty, Buford Hwy @ N Druid Hills Rd (scheduled ≈14.7 min vs. actual ≈25.4)</small></div>
+<div class="kc"><div class="k">5 of 41</div><small>Stops under 250 m from the next stop (redundant friction points)</small></div>
+<div class="kc"><div class="k">78%</div><small>Simulated riders lost in the baseline network (640 of 820 agents)</small></div>
+<div class="kc"><div class="k">22% → 47%</div><small>Simulated retention after consolidating stops and cutting wait variance</small></div></div></section>
+
+<section id="overview"><div class="lab">Overview &amp; study area</div><h2>A corridor with high friction</h2>
+<p class="lead" style="max-width:760px">Route 39 serves as a critical circulatory corridor connecting mixed-income neighborhoods to downtown transit hubs. Historically, this corridor has experienced significant bus bunching and extended wait times, creating high friction for transit-dependent riders.</p>
+<p class="lead" style="max-width:760px">This capstone applies an Agent-Based Model (ABM) framework to simulate individual passenger behaviors, boarding dynamics, and route progression under varying stop-spacing scenarios. By overlaying demographic equity metrics, it tests a redesigned stop configuration that minimizes wait-time friction while keeping access for vulnerable populations.</p>
+<div class="two"><div class="kc"><div class="lab">Aim</div><p style="margin:6px 0 0">To show quantitatively how physical stop redundancy and operational unreliability compound to push riders off Route 39, and to test whether targeted stop consolidation can reverse it.</p></div>
+<div class="kc"><div class="lab">Objectives</div><ul class="t" style="margin:6px 0 0;font-size:15px"><li>Rebuild real headways and wait penalties from GTFS plus delay telemetry.</li><li>Flag stops under 250 m apart.</li><li>Attach zero-car household share to every stop.</li><li>Simulate rider abandonment, then re-run with consolidation.</li></ul></div></div></section>
+<section id="wait"><div class="lab">01 · Operational wait-time profiling</div><h2>Schedules say 15 minutes. Riders wait 25.</h2>
+<p class="lead">Static GTFS was merged with archived delay telemetry (38,034 records after outlier filtering) to rebuild empirical headways. Following TCQSM logic, expected wait is half the mean headway, inflated by headway variance: <code>actual = scheduled × (1 + Var/Mean²)</code>. The gap is the <b>wait penalty</b>.</p>
+<div class="ch"><div id="c1" class="p"></div><div class="cap">Stops along the corridor, north-east to south-west. Colour and size show the wait penalty in minutes. Hover for details.</div></div></section>
+
+<section id="space"><div class="lab">02 · Spatial friction</div><h2>Redundant stops stack on top of the delay</h2>
+<p class="lead">Distance to the next stop was taken from GTFS <code>shape_dist_traveled</code>. Stops under 250 m apart are flagged redundant: extra boardings throttle commercial speed and feed bus bunching.</p>
+<div class="ch"><div id="c2" class="p"></div><div class="cap">Each dot is a stop. Left of the dashed line (250 m) are consolidation candidates; the five red points are the stops removed in the intervention.</div></div></section>
+
+<section id="equity"><div class="lab">03 · Demographic equity overlay</div><h2>Who lives next to the bottleneck?</h2>
+<p class="lead">ACS 2022 5-year estimates (table B08201) for Fulton and DeKalb tracts were spatially joined to each stop to give the share of zero-car households. That share sets how long a rider will tolerate delay in the simulation.</p>
+<div class="ch"><div id="c3" class="p"></div><div class="cap">Wait penalty vs. zero-car household share at each stop. The two worst-delay clusters (Druid Hills and Lenox) sit in tracts with very different car ownership.</div></div></section>
+
+<section id="abm"><div class="lab">04 · Agent-based simulation</div><h2>78% of simulated riders give up</h2>
+<p class="lead">The route became a NetworkX directed graph. Twenty agents spawn at every stop; each accumulates the wait penalty of the stops it passes and abandons once it exceeds a tolerance of <code>10 + (zero-car share × 20)</code> minutes. Captive riders tolerate more, choice riders less.</p>
+<div class="ch"><div id="c4" class="p"></div><div class="cap">Riders lost at each stop (out of 20 agents spawned there; three stops lose 60 because abandoned agents are counted where they quit). Failures concentrate at Clairmont Terrace, Lenox Rd and N Druid Hills Rd.</div></div></section>
+
+<section id="replay"><div class="lab">Live replay of the simulation</div><h2>Watch 820 riders run the gauntlet</h2>
+<p class="lead">Each column is a stop with its 20 simulated riders. Press Play and the model runs its five steps: riders collect the wait penalty of each stop they pass and turn red when they exceed their tolerance. Switch to the consolidated network to compare.</p>
+<div class="ch sim"><div class="ctl"><button id="b0" class="on">Baseline (41 stops)</button><button id="b1">Consolidated (36 stops)</button><button id="bp">▶ Play</button><button id="br">↺ Reset</button><span class="r" id="st">Step 0 of 5</span></div><canvas id="sim" height="260"></canvas>
+<div class="cap"><span style="color:#4b84c4">■</span> still riding · <span style="color:#4cc38a">■</span> completed trip · <span style="color:#e5483c">■</span> abandoned. Grey columns are stops removed by consolidation. <b id="sc"></b></div></div></section>
+<section id="fix"><div class="lab">05 · Intervention scenario</div><h2>Consolidate stops, steady the headways</h2>
+<p class="lead">Removing the five stops under 250 m (41 → 36) and assuming a 50% cut in wait penalty roughly doubles simulated retention.</p>
+<div class="cmp">
+<div class="kc"><b style="font-family:system-ui">Baseline · 41 stops · 820 agents</b><div class="bar"><i style="width:22%;background:var(--ok)"></i><i style="width:78%;background:var(--ac)"></i></div><small>22.0% retained (180) · 78.0% lost (640)</small></div>
+<div class="kc"><b style="font-family:system-ui">Consolidated · 36 stops · 720 agents</b><div class="bar"><i style="width:47.2%;background:var(--ok)"></i><i style="width:52.8%;background:var(--ac)"></i></div><small>47.2% retained (340) · 52.8% lost (380)</small></div></div>
+<div class="box"><b>Read with care:</b> the 50% penalty reduction is an assumed effect of consolidation, not a measured one. The result shows how sensitive retention is to reliability; validating the size of the real-world effect is the natural next step.</div></section>
+
+<section id="method"><div class="lab">Methodology</div><h2>Pipeline</h2><p class="lead">Interactive visualizations above show the spatial distribution of each transit variable and the agent fallout scenarios.</p>
+<div class="step"><div><b>1 · Ingest</b>GTFS (Dec 2025) + Route 39 delay archive</div><div><b>2 · Headways</b>De-duplicate, rebuild empirical headways, TCQSM wait penalty</div><div><b>3 · Spacing</b>Metres between consecutive stops</div><div><b>4 · Equity</b>Census API + TIGER tracts, spatial join</div><div><b>5 · Simulate</b>NetworkX graph, elasticity-based agents</div></div>
+<div class="box"><b>Assumptions &amp; limits.</b> One representative weekday trip defines stop order (41 stops with enough data). 20 agents per stop over 5 steps. Stops outside a matched tract default to 0% zero-car, so some zeros are missing data.</div></section></div><div class="w"><section id="concl"><div class="lab">Conclusions</div><h2>What the model shows</h2><ul class="t">
+<li><b>Unreliability is the larger cost.</b> Riders at the worst stops wait about 25 minutes against a 15-minute schedule, a 10.7-minute penalty at N Druid Hills Rd and about 10.3 at Lenox Rd.</li>
+<li><b>Failure concentrates.</b> In the baseline, 78% of simulated riders abandon, with the heaviest losses at Clairmont Terrace, Lenox Rd and N Druid Hills Rd.</li>
+<li><b>Redundancy is a small, fixable share of the network.</b> Only 5 of 41 stops sit under 250 m from their neighbour.</li>
+<li><b>Retention is highly sensitive to reliability.</b> Consolidating those stops and assuming a 50% lower wait penalty lifts retention from 22.0% to 47.2%. The size of that effect is an assumption to test, not a finding.</li></ul></section>
+<section id="next"><div class="lab">Suggestions</div><h2>What can be done</h2><ul class="t">
+<li><b>Consolidate the five redundant stops</b> (Oak Shadow Dr, Clairmont Terrace, 3700, 3072, Sidney Marcus @ Adina Dr), pairing each removal with a nearby upgraded stop.</li>
+<li><b>Protect captive riders.</b> Four of the five sit in tracts with roughly 18–21% zero-car households, so keep walking distances short and add shelters, lighting and accessible paths at the retained stops.</li>
+<li><b>Attack headway variance at the hot spots:</b> schedule adherence, holding or dispatch control, and transit signal priority around Lenox Rd and N Druid Hills Rd.</li>
+<li><b>Validate before building.</b> Measure the real effect of consolidation on dwell time and headway variance, then run a sensitivity analysis on the 50% factor.</li>
+<li><b>Scale up.</b> Fix the tract-matching gaps, add both directions and peak versus off-peak, and apply the pipeline to other MARTA routes.</li></ul></section>
+</div>
+<footer>Rasmitha Reddy Mundla · Urban Analytics Capstone Report · MARTA Route 39 · Data: MARTA GTFS, delay telemetry archive, U.S. Census ACS 2022</footer>
+<script>
+const D=[["Oakmont Ave",33.89843,-84.27982,466,2.69,5.7,0],["5280",33.89658,-84.28204,480,2.69,5.7,0],["5200",33.89424,-84.28369,456,2.68,5.7,0],["Mcclave Dr",33.89194,-84.28497,488,2.68,5.7,0],["Chamblee Dunwoody Rd",33.88946,-84.28633,447,2.73,35.1,20],["5000",33.8872,-84.28759,505,2.75,35.1,20],["Chamblee Tucker Rd",33.88465,-84.289,469,2.57,35.1,20],["Beverly Hills Dr",33.88228,-84.29033,794,2.39,35.1,20],["4770",33.87828,-84.29258,349,2.38,35.1,0],["Woodside Way",33.87483,-84.29451,915,2.38,35.1,0],["4416",33.8707,-84.29797,425,2.38,35.1,0],["Bragg St",33.86894,-84.29991,862,2.37,35.1,0],["Plaster Rd",33.86542,-84.30387,686,2.36,0.7,0],["Oak Shadow Dr Ne",33.86262,-84.307,206,2.33,0.7,0],["4061",33.86177,-84.30795,315,2.33,0.7,0],["Dering Cir",33.86049,-84.30939,474,2.33,0.7,0],["Clairmont Rd Ne",33.85853,-84.31154,488,2.39,0.7,20],["Clairmont Ter",33.85654,-84.31379,238,5.76,17.8,60],["3814",33.85557,-84.31487,255,5.76,17.8,20],["Drew Valley Rd",33.85452,-84.31603,523,5.76,17.8,20],["3700",33.85236,-84.31846,214,5.76,17.8,20],["3658",33.85152,-84.31942,273,5.76,17.8,20],["3610",33.85039,-84.32066,263,5.76,17.8,20],["3580",33.8493,-84.32187,339,5.76,17.8,20],["Afton Ln Ne",33.84793,-84.32342,508,5.75,22.4,20],["Knoll Pl Ne",33.84586,-84.32576,329,5.75,22.4,20],["Briarwood Rd",33.84449,-84.32724,523,5.76,22.4,20],["N Cliff Valley Way",33.84234,-84.32963,804,5.77,14.4,20],["3160",33.83907,-84.33333,468,5.77,18.6,20],["3072",33.83742,-84.3357,233,5.77,18.6,20],["Curtis Dr Ne",33.83659,-84.33697,640,5.62,18.6,20],["N Druid Hills Rd",33.834,-84.33996,491,10.65,18.6,40],["2858",33.83203,-84.34225,443,5.32,4.6,20],["W Druid Hills Dr",33.8302,-84.34427,314,5.31,4.6,0],["2750",33.82896,-84.34575,508,5.32,4.6,20],["Rivers Edge Dr Ne",33.82688,-84.34809,737,5.31,4.6,20],["Lenox Rd",33.82585,-84.35243,293,10.34,0.0,60],["Lenox Pointe",33.82526,-84.3543,643,10.3,0.0,20],["Sidney Marcus @ Pine Tree Rd Ne",33.82487,-84.35837,619,10.26,0.0,20],["Sidney Marcus @ Adina Dr",33.82587,-84.36237,242,10.22,21.3,0],["Sidney Marcus @ 740",33.82592,-84.36401,1415,10.17,21.3,20]];
+const cs=getComputedStyle(document.documentElement);
+const css=v=>cs.getPropertyValue(v).trim();
+function L(x){return Object.assign({margin:{l:55,r:20,t:10,b:50},paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{color:css('--tx'),family:'system-ui,sans-serif'},hoverlabel:{font:{family:'system-ui,sans-serif'}}},x)}
+const G='rgba(128,128,128,.25)',cfg={responsive:true,displayModeBar:false};
+const n=D.map(s=>s[0]),la=D.map(s=>s[1]),lo=D.map(s=>s[2]),di=D.map(s=>s[3]),pe=D.map(s=>s[4]),zc=D.map(s=>s[5]),ab=D.map(s=>s[6]);
+const red=di.map(d=>d<250);
+Plotly.newPlot('c1',[{type:'scatter',mode:'lines',x:lo,y:la,line:{color:G,width:3},hoverinfo:'skip'},
+{type:'scatter',mode:'markers',x:lo,y:la,text:n,customdata:pe,hovertemplate:'<b>%{text}</b><br>Wait penalty: %{customdata:.1f} min<extra></extra>',marker:{size:pe.map(p=>8+p*1.6),color:pe,colorscale:'YlOrRd',showscale:true,colorbar:{title:'min',thickness:12},line:{color:'#fff',width:1}}}],
+L({showlegend:false,xaxis:{title:'Longitude',gridcolor:G},yaxis:{title:'Latitude',gridcolor:G,scaleanchor:'x',scaleratio:1.2},margin:{l:60,r:10,t:10,b:50}}),cfg);
+Plotly.newPlot('c2',[{type:'scatter',mode:'markers',x:di,y:pe,text:n,hovertemplate:'<b>%{text}</b><br>%{x} m to next stop<br>Penalty %{y:.1f} min<extra></extra>',marker:{size:11,color:red.map(r=>r?css('--ac'):'#4b84c4'),line:{color:'#fff',width:1}}}],
+L({showlegend:false,xaxis:{title:'Distance to next stop (m)',gridcolor:G},yaxis:{title:'Wait penalty (min)',gridcolor:G},shapes:[{type:'line',x0:250,x1:250,y0:0,y1:1,yref:'paper',line:{dash:'dash',color:css('--mu')}}]}),cfg);
+Plotly.newPlot('c3',[{type:'scatter',mode:'markers',x:zc,y:pe,text:n,hovertemplate:'<b>%{text}</b><br>Zero-car households: %{x:.1f}%<br>Penalty %{y:.1f} min<extra></extra>',marker:{size:12,color:pe,colorscale:'YlOrRd',line:{color:'#fff',width:1}}}],
+L({showlegend:false,xaxis:{title:'Zero-car households (%)',gridcolor:G},yaxis:{title:'Wait penalty (min)',gridcolor:G}}),cfg);
+Plotly.newPlot('c4',[{type:'bar',x:n,y:ab,marker:{color:ab.map(a=>a>=40?css('--ac'):'#e9a58f')},hovertemplate:'<b>%{x}</b><br>%{y} riders lost<extra></extra>'}],
+L({showlegend:false,xaxis:{tickangle:-60,automargin:true,tickfont:{size:9}},yaxis:{title:'Riders lost',gridcolor:G},margin:{l:55,r:10,t:10,b:150}}),cfg);
+
+(function(){const c=document.getElementById('anim'),x=c.getContext('2d'),nb=document.getElementById('nb'),na=document.getElementById('na');
+let W,H,k=1,dpr=Math.min(devicePixelRatio||1,2);const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function rs(){const cw=c.clientWidth,ch=c.clientHeight;k=cw>900?1.6:cw>600?1.3:1;W=cw/k;H=ch/k;c.width=cw*dpr;c.height=ch*dpr;x.setTransform(dpr*k,0,0,dpr*k,0,0)}rs();addEventListener('resize',rs);
+let P=[],bus={x:-300,st:'away',t:0},B=0,A=0,last=performance.now(),sp=0,cy=0;
+const stopX=()=>W*0.66,gy=()=>H-70;
+function qx(i){return stopX()-60-i*22}
+function person(p){const y=gy();x.fillStyle=p.col;x.globalAlpha=p.a;x.beginPath();x.arc(p.x,y-26+Math.sin(p.w)*1.2,6,0,7);x.fill();x.fillRect(p.x-4,y-19,8,16);x.fillRect(p.x-4,y-3,3,3+Math.sin(p.w)*2);x.fillRect(p.x+1,y-3,3,3-Math.sin(p.w)*2);x.globalAlpha=1}
+function draw(){x.clearRect(0,0,W,H);const y=gy();x.fillStyle='#1b2a44';x.fillRect(0,y,W,80);x.fillStyle='#2b3b58';x.fillRect(0,y+22,W,2);x.fillStyle='#3d4f72';for(let i=0;i<W;i+=48)x.fillRect(i,y+12,26,2);
+x.fillStyle='#6b7a96';x.fillRect(stopX()-150,y-70,4,70);x.fillRect(stopX()-150,y-72,150,4);x.globalAlpha=.25;x.fillStyle='#8fb4ff';x.fillRect(stopX()-146,y-68,142,60);x.globalAlpha=1;
+x.fillStyle='#ffcf4a';x.fillRect(stopX()+20,y-80,4,80);x.fillStyle='#12263f';x.fillRect(stopX()+8,y-98,28,18);x.fillStyle='#ffcf4a';x.font='bold 11px system-ui';x.fillText('39',stopX()+14,y-85);
+const bx=bus.x,bw=Math.min(300,W*.5);x.fillStyle='#2f6fd6';x.beginPath();x.roundRect(bx,y-62,bw,56,8);x.fill();x.fillStyle='#cfe0ff';for(let i=0;i<5;i++)x.fillRect(bx+14+i*(bw-80)/5,y-52,(bw-80)/5-8,20);
+x.fillStyle='#16233a';x.fillRect(bx+bw-52,y-52,34,46);x.fillStyle='#fff';x.font='bold 12px system-ui';x.fillText('MARTA 39',bx+12,y-14);x.fillStyle='#0a0f18';[bx+40,bx+bw-80].forEach(wx=>{x.beginPath();x.arc(wx,y-4,9,0,7);x.fill()});
+P.forEach(person)}
+function spawn(){const p={x:-20,col:['#e8eaf0','#ffcf4a','#9cc2ff','#ffb4a8'][Math.random()*4|0],a:1,w:Math.random()*6,st:'walk',wait:0,tol:(5+Math.random()*9),slot:0,};P.push(p)}
+function upd(dt){sp+=dt;if(sp>1.1&&P.filter(p=>p.st==='walk'||p.st==='queue').length<9){sp=0;spawn()}
+cy+=dt;if(bus.st==='away'&&cy>10){bus.st='in';bus.x=-Math.min(300,W*.5)-20}
+const bw=Math.min(300,W*.5),tx=stopX()-bw+40;
+if(bus.st==='in'){bus.x+=Math.min(260,(tx-bus.x)*2+30)*dt;if(bus.x>=tx-1){bus.x=tx;bus.st='dwell';bus.t=0}}
+else if(bus.st==='dwell'){bus.t+=dt;if(bus.t>0.4){const q=P.filter(p=>p.st==='queue').sort((a,b)=>b.x-a.x)[0];if(q&&!q.go&&bus.t>0.4){q.go=1;q.st='board';bus.t=0.1}}
+if(bus.t>2.2&&!P.some(p=>p.st==='board')){bus.st='out'}}
+else if(bus.st==='out'){bus.x+=(120+(bus.x-tx)*1.4)*dt;if(bus.x>W+20){bus.st='away';cy=0}}
+const door=bus.x+bw-35;let qi=0;P.sort((a,b)=>b.x-a.x);
+P.forEach(p=>{p.w+=dt*9;
+if(p.st==='walk'){const q=P.filter(o=>o.st==='queue').length;const target=qx(q);p.x+=70*dt;if(p.x>=target){p.x=target;p.st='queue'}}
+else if(p.st==='queue'){p.wait+=dt;const idx=P.filter(o=>o.st==='queue').sort((a,b)=>b.x-a.x).indexOf(p);const t=qx(idx);p.x+=(t-p.x)*Math.min(1,dt*5);
+if(bus.st!=='dwell'&&p.wait>p.tol&&bus.st!=='in'){p.st='leave';p.col='#ff6b5e';A++}}
+else if(p.st==='board'){p.x+=100*dt;if(p.x>=door){p.st='gone';p.a=0;B++}}
+else if(p.st==='leave'){p.x-=60*dt;p.a-=dt*.45;if(p.a<=0)p.st='gone'}});
+P=P.filter(p=>p.st!=='gone');nb.textContent=B;na.textContent=A}
+function loop(t){const dt=Math.min(.05,(t-last)/1000);last=t;upd(dt);draw();requestAnimationFrame(loop)}
+if(rm){for(let i=0;i<5;i++){spawn();P[i].x=qx(i);P[i].st='queue'}bus.x=stopX()-Math.min(300,W*.5)+40;draw()}else requestAnimationFrame(loop)})();
+
+(function(){const c=document.getElementById('sim'),x=c.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2);let sc=0,step=0,tm=null,ag=[],W,H;
+function build(){const keep=sc?D.map(r=>r[3]>=250||r===D[D.length-1]):D.map(()=>true),f=sc?.5:1;ag=[];D.forEach((r,i)=>{if(!keep[i])return;for(let j=0;j<20;j++)ag.push({o:i,i:i,j:j,tol:10+r[5]/100*20,acc:0,st:'T'})});step=0;ag.keep=keep;ag.f=f;draw()}
+function nxt(i){for(let k=i+1;k<D.length;k++)if(ag.keep[k])return k;return -1}
+function run(){if(step>=5)return;ag.forEach(a=>{if(a.st!=='T')return;a.acc+=D[a.i][4]*ag.f;if(a.acc>a.tol){a.st='A';return}const n=nxt(a.i);if(n<0)a.st='C';else a.i=n});step++;draw()}
+function draw(){W=c.clientWidth;H=260;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);const m=14,cw=(W-2*m)/D.length,cs=Math.max(2,Math.min(cw/5.2,4.5));
+const cm=getComputedStyle(document.documentElement).getPropertyValue('--bd').trim();
+D.forEach((r,i)=>{const X=m+i*cw;if(!ag.keep[i]){x.fillStyle=cm;x.fillRect(X+cw*.2,20,cw*.6,H-40);return}
+ag.filter(a=>a.o===i).forEach(a=>{const col=a.j%4,row=a.j/4|0;x.fillStyle=a.st==='A'?'#e5483c':a.st==='C'?'#4cc38a':'#4b84c4';x.fillRect(X+col*cs*1.3,H-30-row*cs*1.3-(a.st==='T'&&a.i!==a.o?0:0),cs,cs)})});
+const A=ag.filter(a=>a.st==='A').length,N=ag.length;document.getElementById('st').textContent='Step '+step+' of 5';
+document.getElementById('sc').textContent=step?`Lost ${A} of ${N} (${(A/N*100).toFixed(1)}%) · Retained ${N-A} (${((N-A)/N*100).toFixed(1)}%)`:''}
+function stop(){clearInterval(tm);tm=null;document.getElementById('bp').textContent='▶ Play'}
+document.getElementById('bp').onclick=()=>{if(tm){stop();return}if(step>=5)build();document.getElementById('bp').textContent='❚❚ Pause';tm=setInterval(()=>{run();if(step>=5)stop()},900)};
+document.getElementById('br').onclick=()=>{stop();build()};
+[0,1].forEach(v=>document.getElementById('b'+v).onclick=()=>{stop();sc=v;document.getElementById('b0').className=v?'':'on';document.getElementById('b1').className=v?'on':'';build()});
+addEventListener('resize',draw);build()})();
+</script></body></html>
